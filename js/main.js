@@ -18,6 +18,20 @@ let navCollapse = document.querySelector('.navbar-collapse.collapse');
 
 navBar.forEach((a) => {
     a.addEventListener('click', () => {
+        // Check if the innerHTML matches exactly "Explore"
+        if (a.innerHTML!="Explore") {
+            navCollapse.classList.remove('show');
+        }
+    });
+});
+
+// hide navbar on clicking dropdown item
+
+let dropItem = document.querySelectorAll('.dropdown-item');
+//let navCollapse = document.querySelector('.navbar-collapse.collapse');
+
+dropItem.forEach((i) => {
+    i.addEventListener('click', () => {
         navCollapse.classList.remove('show');
     });
 });
